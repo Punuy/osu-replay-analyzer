@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>osu!mania Replay Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>osu!mania Replay Analyzer</h1>
+        <div class="upload-container">
+            <div class="upload-section">
+                <div id="replayDropZone" class="drop-zone">
+                    <div class="drop-zone-text">
+                        <p>Drag and drop .osr file here</p>
+                        <p class="small">(Required)</p>
+                        <p class="small">or click to select file</p>
+                    </div>
+                    <input type="file" id="replayFile" accept=".osr" hidden required>
+                </div>
+                <div id="replayInfo" class="file-info"></div>
+            </div>
+            <div class="upload-section">
+                <div id="beatmapDropZone" class="drop-zone">
+                    <div class="drop-zone-text">
+                        <p>Drag and drop .osu file here</p>
+                        <p class="small">(Required)</p>
+                        <p class="small">or click to select file</p>
+                    </div>
+                    <input type="file" id="beatmapFile" accept=".osu" hidden required>
+                </div>
+                <div id="beatmapInfo" class="file-info"></div>
+            </div>
+        </div>
+        <button id="analyzeButton" class="analyze-button" disabled>Analyze Replay</button>
+        <div id="loadingSpinner" class="loading-spinner hidden"></div>
+        <div id="results" class="results hidden">
+            <div class="stats-container">
+                <div class="stat-box">
+                    <h3>Total Note Hits</h3>
+                    <p id="totalPresses">-</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Average Press Time</h3>
+                    <p id="avgPressTime">-</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Min Press Time</h3>
+                    <p id="minPressTime">-</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Max Press Time</h3>
+                    <p id="maxPressTime">-</p>
+                </div>
+            </div>
+            <div class="graph-container">
+                <img id="pressGraph" alt="Press time distribution graph">
+            </div>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
